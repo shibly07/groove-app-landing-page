@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import {
   AboutSection,
   AccordionSection,
@@ -12,14 +10,9 @@ import {
 } from "@/components";
 
 function App() {
-  const [showMobileNavMenu, setShowMobileNavMenu] = useState<boolean>(false);
-
   return (
     <>
-      <NavBar
-        showMobileNavMenu={showMobileNavMenu}
-        setShowMobileNavMenu={setShowMobileNavMenu}
-      />
+      <NavBar />
       <HeroSection />
       <AboutSection />
       <AccordionSection />

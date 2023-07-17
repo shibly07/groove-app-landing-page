@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-scroll";
 
 import WrapperContainer from "./WrapperContainer";
@@ -8,13 +8,8 @@ import { TbMinusVertical } from "react-icons/tb";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 
-type NavBarProps = {
-  showMobileNavMenu: boolean;
-  setShowMobileNavMenu: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
-const NavBar = ({ showMobileNavMenu, setShowMobileNavMenu }: NavBarProps) => {
-  const openAndCloseMobileNavMenu = () => {
+const NavBar = () => {
+  const openAndCloseMobileNavMenu = (): void => {
     if (showMobileNavMenu) {
       setShowMobileNavMenu(false);
       document.body.style.overflowY = "";
@@ -23,6 +18,8 @@ const NavBar = ({ showMobileNavMenu, setShowMobileNavMenu }: NavBarProps) => {
       document.body.style.overflowY = "hidden";
     }
   };
+
+  const [showMobileNavMenu, setShowMobileNavMenu] = useState<boolean>(false);
 
   return (
     <>
