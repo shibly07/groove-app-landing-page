@@ -19,6 +19,7 @@ const HeroSection = () => {
             </div>
           </div>
 
+          {/* Half hidden smartphone image */}
           <img
             src={smartphoneImage}
             alt="smartphone-image"

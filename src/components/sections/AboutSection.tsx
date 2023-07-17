@@ -48,6 +48,7 @@ const AboutSection = () => {
                   />
                 </div>
                 <div className="overflow-y-hidden flex flex-col flex-[2_2_0%] items-center lg:items-start gap-y-4">
+                  {/* Cards */}
                   <div className="lg:relative">
                     {aboutDetails.map((item, index) => (
                       <div

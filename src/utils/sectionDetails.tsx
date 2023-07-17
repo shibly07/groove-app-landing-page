@@ -9,6 +9,7 @@ type AboutDetailsProps = {
   description: string;
 };
 
+// Data for About section
 export const aboutDetails: AboutDetailsProps[] = [
   {
     icon: cart,

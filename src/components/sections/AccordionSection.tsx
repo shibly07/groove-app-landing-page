@@ -13,6 +13,7 @@ const AccordionSection = () => {
             <Button text="Download Free" variant="variant3" />
           </div>
           <div className="flex justify-center lg:flex-1 mt-8 lg:mt-0 mb-10">
+            {/* Accordion using MUI Accordion component */}
             <MuiAccordionComp />
           </div>
         </div>

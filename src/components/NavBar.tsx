@@ -9,23 +9,30 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
 
 const NavBar = () => {
+  // Open and close mobile menu
   const openAndCloseMobileNavMenu = (): void => {
     if (showMobileNavMenu) {
       setShowMobileNavMenu(false);
       document.body.style.overflowY = "";
     } else {
       setShowMobileNavMenu(true);
+
+      // Lock vertical scrolling when mobile navigation menu is open
       document.body.style.overflowY = "hidden";
     }
   };
 
+  // Open and close state of mobile navigation menu
   const [showMobileNavMenu, setShowMobileNavMenu] = useState<boolean>(false);
 
   return (
     <>
+      {/* Dark overlay when mobile navigation menu is open */}
       {showMobileNavMenu && (
         <div className="inset-0 absolute min-h-screen w-full bg-black z-[40]" />
       )}
+
+      {/* Nav items */}
       <nav className="fixed pt-12 pb-6 w-full z-[50] bg-[#33D2FD]">
         <WrapperContainer>
           <div className="flex justify-between text-white">
@@ -40,22 +47,23 @@ const NavBar = () => {
                 <span className="text-xs font-bold">APP</span>
               </div>
             </div>
-            {/* Mobile links */}
-            <div className="md:hidden flex items-center">
-              <div className="">
-                {!showMobileNavMenu ? (
-                  <GiHamburgerMenu
-                    className="h-6 w-6"
-                    onClick={openAndCloseMobileNavMenu}
-                  />
-                ) : (
-                  <ImCross
-                    className="h-5 w-5"
-                    onClick={openAndCloseMobileNavMenu}
-                  />
-                )}
-              </div>
 
+            {/* Mobile menu icon */}
+            <div className="md:hidden flex items-center">
+              {/* Hamburger menu for mobile */}
+              {!showMobileNavMenu ? (
+                <GiHamburgerMenu
+                  className="h-6 w-6"
+                  onClick={openAndCloseMobileNavMenu}
+                />
+              ) : (
+                <ImCross
+                  className="h-5 w-5"
+                  onClick={openAndCloseMobileNavMenu}
+                />
+              )}
+
+              {/* Mobile links */}
               <div className="absolute left-0 top-20 z-40 w-full h-full pl-44 flex flex-col gap-y-5 text-black text-center">
                 {showMobileNavMenu && (
                   <ul className="bg-slate-700 text-white py-7">
@@ -119,7 +127,7 @@ const NavBar = () => {
             {/* Desktop links */}
             <div className="hidden md:block">
               <ul className="flex gap-x-20 text-white font-bold">
-                <li>
+                <li className="cursor-pointer">
                   <Link
                     activeClass="active"
                     to="hero"
@@ -127,46 +135,42 @@ const NavBar = () => {
                     smooth={true}
                     offset={50}
                     duration={500}
-                    onClick={openAndCloseMobileNavMenu}
                   >
                     Home
                   </Link>
                 </li>
-                <li>
+                <li className="cursor-pointer">
                   <Link
                     activeClass="active"
-                    to="hero"
+                    to="about"
                     spy={true}
                     smooth={true}
                     offset={50}
                     duration={500}
-                    onClick={openAndCloseMobileNavMenu}
                   >
                     About
                   </Link>
                 </li>
-                <li>
+                <li className="cursor-pointer">
                   <Link
                     activeClass="active"
-                    to="hero"
+                    to="app"
                     spy={true}
                     smooth={true}
                     offset={50}
                     duration={500}
-                    onClick={openAndCloseMobileNavMenu}
                   >
                     App
                   </Link>
                 </li>
-                <li>
+                <li className="cursor-pointer">
                   <Link
                     activeClass="active"
-                    to="hero"
+                    to="info"
                     spy={true}
                     smooth={true}
                     offset={50}
                     duration={500}
-                    onClick={openAndCloseMobileNavMenu}
                   >
                     Info
                   </Link>

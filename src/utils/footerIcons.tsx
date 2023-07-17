@@ -13,6 +13,7 @@ type FooterIconsProps = {
   companyLogo: IconType;
 };
 
+// Footer icons
 const footerIcons: FooterIconsProps[] = [
   { companyName: "Facebook", companyLogo: BiLogoFacebook },
   { companyName: "Twitter", companyLogo: BiLogoTwitter },
