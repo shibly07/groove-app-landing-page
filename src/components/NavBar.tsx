@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 import { WrapperContainer } from "@/wrapper";
+import { overLayVariant, ulLinksVariant } from "@/utils";
 
 import { ImPlay3 } from "react-icons/im";
 import { TbMinusVertical } from "react-icons/tb";
@@ -26,12 +28,7 @@ const NavBar = () => {
   const [showMobileNavMenu, setShowMobileNavMenu] = useState<boolean>(false);
 
   return (
-    <div>
-      {/* Dark overlay when mobile navigation menu is open */}
-      {showMobileNavMenu && (
-        <div className="inset-0 absolute min-h-screen w-full bg-black z-[40]" />
-      )}
-
+    <>
       {/* Nav items */}
       <nav className={`fixed pt-12 pb-6 w-full z-[50] bg-slate-500`}>
         <WrapperContainer>
@@ -66,59 +63,65 @@ const NavBar = () => {
               )}
 
               {/* Mobile links */}
-              <div className="absolute left-0 top-20 z-40 w-full h-full pl-44 flex flex-col gap-y-5 text-black text-center">
-                {showMobileNavMenu && (
-                  <ul className="bg-slate-700 text-white py-7">
-                    <li className="py-2">
-                      <Link
-                        to="hero"
-                        spy={true}
-                        smooth={true}
-                        duration={500}
-                        onClick={openAndCloseMobileNavMenu}
-                      >
-                        Home
-                      </Link>
-                    </li>
-                    <li className="py-2">
-                      <Link
-                        to="about"
-                        spy={true}
-                        smooth={true}
-                        offset={-90}
-                        duration={500}
-                        onClick={openAndCloseMobileNavMenu}
-                      >
-                        About
-                      </Link>
-                    </li>
-                    <li className="py-2">
-                      <Link
-                        to="app"
-                        spy={true}
-                        smooth={true}
-                        offset={20}
-                        duration={500}
-                        onClick={openAndCloseMobileNavMenu}
-                      >
-                        App
-                      </Link>
-                    </li>
-                    <li className="py-2">
-                      <Link
-                        to="info"
-                        spy={true}
-                        smooth={true}
-                        offset={-20}
-                        duration={500}
-                        onClick={openAndCloseMobileNavMenu}
-                      >
-                        Info
-                      </Link>
-                    </li>
-                  </ul>
-                )}
-              </div>
+
+              <motion.div
+                variants={overLayVariant}
+                animate={showMobileNavMenu ? "show" : "hidden"}
+                className="absolute left-0 top-24 z-40 w-full h-screen pl-44 flex flex-col gap-y-5 text-center bg-black"
+              >
+                <motion.ul
+                  variants={ulLinksVariant}
+                  className="bg-slate-700 text-white py-7 font-bold"
+                >
+                  <motion.li variants={ulLinksVariant} className="py-2">
+                    <Link
+                      to="hero"
+                      spy={true}
+                      smooth={true}
+                      duration={500}
+                      onClick={openAndCloseMobileNavMenu}
+                    >
+                      Home
+                    </Link>
+                  </motion.li>
+                  <motion.li variants={ulLinksVariant} className="py-2">
+                    <Link
+                      to="about"
+                      spy={true}
+                      smooth={true}
+                      offset={-90}
+                      duration={500}
+                      onClick={openAndCloseMobileNavMenu}
+                    >
+                      About
+                    </Link>
+                  </motion.li>
+                  <motion.li variants={ulLinksVariant} className="py-2">
+                    <Link
+                      to="app"
+                      spy={true}
+                      smooth={true}
+                      offset={20}
+                      duration={500}
+                      onClick={openAndCloseMobileNavMenu}
+                    >
+                      App
+                    </Link>
+                  </motion.li>
+                  <motion.li variants={ulLinksVariant} className="py-2">
+                    <Link
+                      to="info"
+                      spy={true}
+                      smooth={true}
+                      offset={-20}
+                      duration={500}
+                      onClick={openAndCloseMobileNavMenu}
+                    >
+                      Info
+                    </Link>
+                  </motion.li>
+                </motion.ul>
+              </motion.div>
             </div>
 
             {/* Desktop links */}
@@ -161,7 +164,7 @@ const NavBar = () => {
           </div>
         </WrapperContainer>
       </nav>
-    </div>
+    </>
   );
 };
 

@@ -5,4 +5,13 @@ import {
   footerIcons,
 } from "@/utils/data";
 
-export { aboutDetails, accordionData, bottomLinks, footerIcons };
+import { overLayVariant, ulLinksVariant } from "@/utils/variants";
+
+export {
+  aboutDetails,
+  accordionData,
+  bottomLinks,
+  footerIcons,
+  overLayVariant,
+  ulLinksVariant,
+};
