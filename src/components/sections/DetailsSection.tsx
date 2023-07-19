@@ -1,20 +1,30 @@
+import { useRef } from "react";
+import Lottie, { LottieRefCurrentProps } from "lottie-react";
+import codingAnimation from "@/assets/lottie/codingAnimation.json";
+
 import { WrapperContainer, AnimatedReveal } from "@/wrapper";
 
 import checkIcon from "@/assets/icons/icon-check.png";
 
-import test from "@/assets/test.png";
-
 const DetailsSection = () => {
   const delay = 0.5;
 
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
   return (
     <section id="info" className="bg-[#fafafc] py-14">
       <WrapperContainer>
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col lg:flex-row lg:items-center">
           <div className="flex-1">
             {/* Lottie animation */}
             <AnimatedReveal from="left" delay={delay} threshold={0.5}>
-              <img src={test} alt="" className="w-full" />
+              <Lottie
+                lottieRef={lottieRef}
+                onComplete={() => {
+                  lottieRef.current?.setDirection(-1);
+                  lottieRef.current?.play();
+                }}
+                animationData={codingAnimation}
+              />
             </AnimatedReveal>
           </div>
           <div className="flex-1">
@@ -44,10 +54,9 @@ const DetailsSection = () => {
                     </span>
                   </p>
                   <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Sed provident iste libero vitae, accusamus nesciunt
-                    repellendus amet sunt, sint illum beatae, itaque nam impedit
-                    tenetur.
+                    If you are looking for performance, efficiency, security,
+                    and compatibility, then say no more! We got everything you
+                    want....
                   </p>
                 </>
               </AnimatedReveal>
