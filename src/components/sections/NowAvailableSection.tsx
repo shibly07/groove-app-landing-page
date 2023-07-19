@@ -29,10 +29,8 @@ const NowAvailableSection = () => {
                 <p className="text-3xl font-bold text-[#233148]">
                   Now Available
                 </p>
-                <p className="text-white text-sm my-10">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Repudiandae voluptas corporis, laudantium at eum, illo
-                  quisquam totam delectus, suscipit sequi autem nisi eius quo a!
+                <p className="text-white text-sm my-10 text-center lg:text-left">
+                  Now available to download in both Android and iOS.
                 </p>
                 <div className="flex justify-between">
                   <Button

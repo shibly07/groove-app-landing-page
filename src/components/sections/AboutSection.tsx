@@ -59,10 +59,7 @@ const AboutSection = () => {
                         key={`about-item-${index}`}
                         className={`lg:absolute ${cardPosition(index)}`}
                       >
-                        <AnimatedReveal
-                          from={"left"}
-                          delay={delay + 0.3 + delay * index}
-                        >
+                        <AnimatedReveal from={"left"} delay={delay * index}>
                           <Card
                             icon={item.icon}
                             title={item.title}

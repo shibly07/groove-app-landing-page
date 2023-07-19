@@ -73,7 +73,6 @@ const NavBar = () => {
                         to="hero"
                         spy={true}
                         smooth={true}
-                        offset={50}
                         duration={500}
                         onClick={openAndCloseMobileNavMenu}
                       >
@@ -86,7 +85,7 @@ const NavBar = () => {
                         to="about"
                         spy={true}
                         smooth={true}
-                        offset={50}
+                        offset={-90}
                         duration={500}
                         onClick={openAndCloseMobileNavMenu}
                       >
@@ -99,7 +98,7 @@ const NavBar = () => {
                         to="app"
                         spy={true}
                         smooth={true}
-                        offset={50}
+                        offset={20}
                         duration={500}
                         onClick={openAndCloseMobileNavMenu}
                       >
@@ -112,7 +111,7 @@ const NavBar = () => {
                         to="info"
                         spy={true}
                         smooth={true}
-                        offset={50}
+                        offset={-20}
                         duration={500}
                         onClick={openAndCloseMobileNavMenu}
                       >
@@ -133,7 +132,6 @@ const NavBar = () => {
                     to="hero"
                     spy={true}
                     smooth={true}
-                    offset={50}
                     duration={500}
                   >
                     Home
@@ -145,7 +143,7 @@ const NavBar = () => {
                     to="about"
                     spy={true}
                     smooth={true}
-                    offset={50}
+                    offset={-30}
                     duration={500}
                   >
                     About
@@ -157,7 +155,7 @@ const NavBar = () => {
                     to="app"
                     spy={true}
                     smooth={true}
-                    offset={50}
+                    offset={-40}
                     duration={500}
                   >
                     App
@@ -169,7 +167,8 @@ const NavBar = () => {
                     to="info"
                     spy={true}
                     smooth={true}
-                    offset={50}
+                 
+                 
                     duration={500}
                   >
                     Info

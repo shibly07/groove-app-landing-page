@@ -24,7 +24,7 @@ const Button = (props: ButtonProps) => {
     variant1: "bg-white",
     variant2: "border border-white text-white",
     variant3: "bg-[#33D2FD] text-white",
-    variant4: "bg-black",
+    variant4: "bg-black px-3 py-2",
   };
 
   const buttonStyle =
