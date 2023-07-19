@@ -37,16 +37,18 @@ const NavBar = () => {
         <WrapperContainer>
           <div className="flex justify-between text-white">
             {/* Logo */}
-            <div className="flex items-center">
-              <div className="flex items-center">
-                <ImPlay3 className="h-7 w-7" />
-                <TbMinusVertical className="h-7 w-7" />
+            <Link to="hero" spy={true} smooth={true} duration={500}>
+              <div className="flex items-center cursor-pointer">
+                <div className="flex items-center">
+                  <ImPlay3 className="h-7 w-7" />
+                  <TbMinusVertical className="h-7 w-7" />
+                </div>
+                <div className="flex flex-col justify-center">
+                  <span className="text-xs font-bold">GROOVE</span>
+                  <span className="text-xs font-bold">APP</span>
+                </div>
               </div>
-              <div className="flex flex-col justify-center">
-                <span className="text-xs font-bold">GROOVE</span>
-                <span className="text-xs font-bold">APP</span>
-              </div>
-            </div>
+            </Link>
 
             {/* Mobile menu icon */}
             <div className="md:hidden flex items-center">
@@ -69,7 +71,6 @@ const NavBar = () => {
                   <ul className="bg-slate-700 text-white py-7">
                     <li className="py-2">
                       <Link
-                        activeClass="active"
                         to="hero"
                         spy={true}
                         smooth={true}
@@ -81,7 +82,6 @@ const NavBar = () => {
                     </li>
                     <li className="py-2">
                       <Link
-                        activeClass="active"
                         to="about"
                         spy={true}
                         smooth={true}
@@ -94,7 +94,6 @@ const NavBar = () => {
                     </li>
                     <li className="py-2">
                       <Link
-                        activeClass="active"
                         to="app"
                         spy={true}
                         smooth={true}
@@ -107,7 +106,6 @@ const NavBar = () => {
                     </li>
                     <li className="py-2">
                       <Link
-                        activeClass="active"
                         to="info"
                         spy={true}
                         smooth={true}
@@ -127,19 +125,12 @@ const NavBar = () => {
             <div className="hidden md:block">
               <ul className="flex gap-x-20 text-white font-bold">
                 <li className="cursor-pointer">
-                  <Link
-                    activeClass="active"
-                    to="hero"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                  >
+                  <Link to="hero" spy={true} smooth={true} duration={500}>
                     Home
                   </Link>
                 </li>
                 <li className="cursor-pointer">
                   <Link
-                    activeClass="active"
                     to="about"
                     spy={true}
                     smooth={true}
@@ -151,7 +142,6 @@ const NavBar = () => {
                 </li>
                 <li className="cursor-pointer">
                   <Link
-                    activeClass="active"
                     to="app"
                     spy={true}
                     smooth={true}
@@ -162,15 +152,7 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li className="cursor-pointer">
-                  <Link
-                    activeClass="active"
-                    to="info"
-                    spy={true}
-                    smooth={true}
-                 
-                 
-                    duration={500}
-                  >
+                  <Link to="info" spy={true} smooth={true} duration={500}>
                     Info
                   </Link>
                 </li>
