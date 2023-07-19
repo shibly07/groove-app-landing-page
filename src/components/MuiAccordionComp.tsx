@@ -44,6 +44,7 @@ const MuiAccordionComp = () => {
 
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
+      event.preventDefault();
       setExpanded(newExpanded ? panel : false);
     };
 
