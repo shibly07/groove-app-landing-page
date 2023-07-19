@@ -11,7 +11,7 @@ import {
 
 function App() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <NavBar />
       <HeroSection />
       <AboutSection />
@@ -20,7 +20,7 @@ function App() {
       <NowAvailableSection />
       <GetInTouchSection />
       <FooterSection />
-    </>
+    </div>
   );
 }
 

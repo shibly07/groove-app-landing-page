@@ -1,6 +1,6 @@
-import { WrapperContainer } from "@/components";
+import { AnimatedReveal, WrapperContainer } from "@/wrapper";
 
-import { aboutDetails } from "@/utils/sectionDetails";
+import { aboutDetails } from "@/utils";
 
 import smartPhone from "@/assets/image-smartphone.png";
 
@@ -32,8 +32,10 @@ const Card = ({
 };
 
 const AboutSection = () => {
+  const delay = 0.5;
+
   return (
-    <div id="about" className="min-h-[77rem] bg-[#fafafc]">
+    <section id="about" className="min-h-[77rem] bg-[#fafafc]">
       <div className="relative">
         <div className="absolute w-full h-[40rem] z-10 bg-[url('@/assets/backgrounds/bg-about.png')] -mt-20 sm:-mt-28 lg:-mt-[16rem] xl:-mt-[22rem] bg-no-repeat bg-cover bg-center sm:bg-top" />
         <div className="relative">
@@ -41,11 +43,13 @@ const AboutSection = () => {
             <WrapperContainer>
               <div className="lg:flex max-w-[90rem] mx-auto">
                 <div className="flex-1 lg:py-56">
-                  <img
-                    src={smartPhone}
-                    alt={`${smartPhone}-image`}
-                    className="h-[35rem] hidden lg:block"
-                  />
+                  <AnimatedReveal from="left" delay={0}>
+                    <img
+                      src={smartPhone}
+                      alt={`${smartPhone}-image`}
+                      className="h-[35rem] hidden lg:block"
+                    />
+                  </AnimatedReveal>
                 </div>
                 <div className="overflow-y-hidden flex flex-col flex-[2_2_0%] items-center lg:items-start gap-y-4">
                   {/* Cards */}
@@ -55,11 +59,16 @@ const AboutSection = () => {
                         key={`about-item-${index}`}
                         className={`lg:absolute ${cardPosition(index)}`}
                       >
-                        <Card
-                          icon={item.icon}
-                          title={item.title}
-                          description={item.description}
-                        />
+                        <AnimatedReveal
+                          from={"left"}
+                          delay={delay + 0.3 + delay * index}
+                        >
+                          <Card
+                            icon={item.icon}
+                            title={item.title}
+                            description={item.description}
+                          />
+                        </AnimatedReveal>
                       </div>
                     ))}
                   </div>
@@ -69,7 +78,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

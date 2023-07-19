@@ -25,6 +25,8 @@
       "@/components/*": ["src/components/*"],
       "@/assets/*": ["src/assets/*"],
       "@/utils/*": ["src/utils/*"],
+      "@/wrapper/*": ["src/wrapper/*"],
+      "@/functions/*": ["src/functions/*"]
     }
   },
 

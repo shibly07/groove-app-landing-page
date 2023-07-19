@@ -1,5 +1,4 @@
 import NavBar from "@/components/NavBar";
-import WrapperContainer from "@/components/WrapperContainer";
 import Button from "@/components//Button";
 import MuiAccordionComp from "@/components/MuiAccordionComp";
 
@@ -13,7 +12,6 @@ import FooterSection from "@/components/sections/FooterSection";
 
 export {
   NavBar,
-  WrapperContainer,
   Button,
   MuiAccordionComp,
   HeroSection,

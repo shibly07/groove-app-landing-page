@@ -7,25 +7,7 @@ import MuiAccordionSummary, {
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 
-import { AiOutlineHeart } from "react-icons/ai";
-import { GiPriceTag } from "react-icons/gi";
-import { LiaSuitcaseSolid } from "react-icons/lia";
-import { PiPencilDuotone } from "react-icons/pi";
-
-const data = [
-  { title: "Made With Love", description: "text", icon: AiOutlineHeart },
-  { title: "Free of Use", description: "text", icon: GiPriceTag },
-  {
-    title: "Fully Support Available",
-    description: "text",
-    icon: LiaSuitcaseSolid,
-  },
-  {
-    title: "Flat and Modern UI & UX",
-    description: "text",
-    icon: PiPencilDuotone,
-  },
-];
+import { accordionData } from "@/utils";
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -66,8 +48,8 @@ const MuiAccordionComp = () => {
     };
 
   return (
-    <div className="w-full flex flex-col gap-y-4">
-      {data.map((item, id) => {
+    <div className="w-full flex flex-col gap-y-4 overflow-x-hidden">
+      {accordionData.map((item, id) => {
         const Icon = item.icon;
         return (
           <Accordion
@@ -80,7 +62,7 @@ const MuiAccordionComp = () => {
               id="panel1d-header"
             >
               <Icon className="h-6 w-6 mr-4" />
-              <Typography className="font-extrabold text-base text-[#233148]">
+              <Typography className="text-[#233148]" sx={{ fontWeight: 700 }}>
                 {item.title}
               </Typography>
             </AccordionSummary>

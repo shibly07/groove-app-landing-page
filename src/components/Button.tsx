@@ -27,13 +27,12 @@ const Button = (props: ButtonProps) => {
     variant4: "bg-black",
   };
 
+  const buttonStyle =
+    "font-bold text-base md:text-lg rounded-md h-10 w-44 text-center";
+
   if (props.variant !== "variant4") {
     return (
-      <button
-        className={`font-bold text-base md:text-lg px-9 py-4 rounded-md ${
-          buttonVariants[props.variant]
-        }`}
-      >
+      <button className={`${buttonStyle} ${buttonVariants[props.variant]}`}>
         {props.text}
       </button>
     );
@@ -41,7 +40,7 @@ const Button = (props: ButtonProps) => {
     const Icon = props.icon;
     return (
       <button
-        className={`text-white font-bold text-base md:text-lg px-3 py-2 rounded-md flex ${
+        className={`text-white font-bold text-base md:text-lg  rounded-md flex ${
           buttonVariants[props.variant]
         }`}
       >

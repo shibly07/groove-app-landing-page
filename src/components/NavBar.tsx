@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
 
-import WrapperContainer from "./WrapperContainer";
+import { WrapperContainer } from "@/wrapper";
 
 import { ImPlay3 } from "react-icons/im";
 import { TbMinusVertical } from "react-icons/tb";
@@ -26,14 +26,14 @@ const NavBar = () => {
   const [showMobileNavMenu, setShowMobileNavMenu] = useState<boolean>(false);
 
   return (
-    <>
+    <div>
       {/* Dark overlay when mobile navigation menu is open */}
       {showMobileNavMenu && (
         <div className="inset-0 absolute min-h-screen w-full bg-black z-[40]" />
       )}
 
       {/* Nav items */}
-      <nav className="fixed pt-12 pb-6 w-full z-[50] bg-[#33D2FD]">
+      <nav className={`fixed pt-12 pb-6 w-full z-[50] bg-slate-500`}>
         <WrapperContainer>
           <div className="flex justify-between text-white">
             {/* Logo */}
@@ -180,7 +180,7 @@ const NavBar = () => {
           </div>
         </WrapperContainer>
       </nav>
-    </>
+    </div>
   );
 };
 
